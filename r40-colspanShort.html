@@ -1,1 +1,31 @@
-<!doctype html><html lang="fr"><head><meta charset="utf-8"><title>R40 colspanShort</title></head><body><table id="target"><caption>Prix</caption><tr><th scope="col" colspan="2">Produit</th></tr><tr><td>Livre</td><td>12 ?</td><td>Stock</td></tr></table></body></html>
+<!doctype html><html lang="fr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Un colspan qui s’arrête trop tôt. — ErgoQual R40</title><link rel="stylesheet" href="demo.css"></head><body>
+<a class="skip" href="#main">Aller au contenu</a><header class="site-header"><a class="brand" href="./"><span class="brand-mark" aria-hidden="true">R40</span> Le banc d’essai</a><nav aria-label="Cas de test"><a href="r40-ragged.html" >Cas 01</a><a href="r40-colspanShort.html" aria-current="page">Cas 02</a></nav></header>
+<main id="main"><section class="intro"><p class="eyebrow">CAS 02 / R40.1 · EN-TÊTES DE TABLEAUX</p><h1>Un colspan qui s’arrête trop tôt.</h1><p class="lead">L’en-tête « Article » couvre deux colonnes. La ligne de données en occupe trois : la disponibilité reste sans en-tête.</p></section>
+<aside class="instructions" aria-label="Comment tester"><span class="step-number" aria-hidden="true">↗</span><div><strong>Lancez ErgoQual sur cette page.</strong><p>Seul le tableau « À corriger » devrait déclencher R40.1. Le tableau corrigé sert de comparaison.</p></div></aside>
+<div class="comparison"><section class="case-card bad" aria-labelledby="bad-title"><div class="card-head"><span class="state"><span aria-hidden="true">!</span> À corriger</span><span class="expected">R40.1 attendu</span></div>
+<div class="card-body"><h2 id="bad-title">Couverture incomplète.</h2><p class="metric">colspan="2" / 3 colonnes de données</p><div class="table-wrap"><table id="case-bad" class="demo-table three-cols"><caption>Prix</caption><tr><th scope="col" colspan="2">Article</th></tr><tr><td>Livre</td><td>12,00 €</td><td>En stock</td></tr></table></div><p class="why">Le colspan="2" étend « Article » sur les deux premières colonnes. Il ne couvre pas la troisième, qui contient « En stock ». Le regroupement ne suffit donc pas.</p></div>
+<details><summary>Voir le HTML de ce tableau</summary><pre><code>&lt;table&gt;
+  &lt;caption&gt;Prix&lt;/caption&gt;
+  &lt;tr&gt;
+    &lt;th scope="col" colspan="2"&gt;Article&lt;/th&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;Livre&lt;/td&gt;&lt;td&gt;12,00 €&lt;/td&gt;&lt;td&gt;En stock&lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/table&gt;</code></pre></details></section><section class="case-card good" aria-labelledby="good-title"><div class="card-head"><span class="state"><span aria-hidden="true">✓</span> Version corrigée</span><span class="expected">Aucun R40.1 attendu</span></div>
+<div class="card-body"><h2 id="good-title">Toutes les colonnes sont couvertes.</h2><p class="metric">3 colonnes couvertes</p><div class="table-wrap"><table id="case-good" class="demo-table three-cols"><caption>Prix</caption><tr><th scope="colgroup" colspan="2">Article</th><th scope="col" rowspan="2">Disponibilité</th></tr><tr><th scope="col">Produit</th><th scope="col">Prix</th></tr><tr><td>Livre</td><td>12,00 €</td><td>En stock</td></tr></table></div><p class="why">« Disponibilité » nomme la troisième colonne. Les deux premières sont précisées par « Produit » et « Prix » sous l’en-tête de groupe « Article ».</p></div>
+<details><summary>Voir le HTML de ce tableau</summary><pre><code>&lt;table&gt;
+  &lt;caption&gt;Prix&lt;/caption&gt;
+  &lt;tr&gt;
+    &lt;th scope="colgroup" colspan="2"&gt;Article&lt;/th&gt;
+    &lt;th scope="col" rowspan="2"&gt;Disponibilité&lt;/th&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;th scope="col"&gt;Produit&lt;/th&gt;
+    &lt;th scope="col"&gt;Prix&lt;/th&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;Livre&lt;/td&gt;&lt;td&gt;12,00 €&lt;/td&gt;&lt;td&gt;En stock&lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/table&gt;</code></pre></details></section></div>
+<section class="explanation"><div><p class="eyebrow">CE QUE CE CAS VÉRIFIE</p><h2>Présence n’est pas couverture.</h2></div><div><p>Il faut compter les colonnes logiques : un colspan="2" couvre deux colonnes, pas trois. Le contrôle doit aussi conserver les en-têtes valides sur plusieurs lignes.</p><p class="observation"><strong>Observation du dojo :</strong> la version canonique du 19 novembre signalait le tableau incomplet ; le patch final <code>f900aa68</code> le laissait passer. La correction de R40 est en cours.</p><p>Le résultat affiché ici est une attente de test, pas un résultat calculé par cette page. Les éventuelles autres règles ErgoQual sont hors de ce cas.</p><a class="text-link" href="minimal/r40-colspanShort.html">Ouvrir la reproduction minimale d’origine <span aria-hidden="true">→</span></a></div></section></main><footer><span>ErgoQual · Reproductions du 20 novembre 2026</span><a href="https://github.com/suisoku/ergoqual-repros">Voir les sources sur GitHub</a></footer></body></html>
