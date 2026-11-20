@@ -1,0 +1,646 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="charteMode" content="intranet">
+<title>Annexe intranet du banc R40 — ErgoQual</title>
+<link rel="stylesheet" href="demo.css">
+<link rel="stylesheet" href="r40.css">
+</head>
+<body class="frame-page">
+<a class="skip" href="#main">Aller au contenu</a>
+<header class="site-header">
+  <a class="brand ergoqual-ignore" href="r40.html" target="_top"><span class="brand-mark" aria-hidden="true">R40</span> Annexe intranet</a>
+</header>
+<main id="main">
+  <section class="bench-intro ergoqual-ignore" aria-labelledby="annexe-title">
+    <p class="eyebrow">ANNEXE A · CONTEXTE INTRANET</p>
+    <h1 id="annexe-title">Cas intranet du banc R40</h1>
+    <p class="lead">Cette page déclare <code>&lt;meta name="charteMode" content="intranet"&gt;</code> : ErgoQual l’analyse en mode intranet, seule ou dans le cadre du banc complet.</p>
+  </section>
+  <section class="bench-case" id="i01" data-case="i01">
+    <div class="case-intro ergoqual-ignore">
+      <p class="eyebrow">CAS I01 · R40.3 · CHARTE INTRANET</p>
+      <h2 id="i01-title">Liste sans titre</h2>
+      <p>En intranet, chaque tableau typé (liste, fiche, tab2dim) porte un titre invisible.</p>
+    </div>
+    <div class="comparison">
+      <article class="case-card bad">
+        <div class="card-head ergoqual-ignore">
+          <span class="state"><span aria-hidden="true">!</span> Non conforme</span>
+          <span class="expected">Attendu : R40.3</span>
+        </div>
+        <div class="card-body">
+          <h3 id="i01-nc-title" class="ergoqual-ignore">Liste sans caption</h3>
+          <div class="table-wrap">
+            <table class="liste demo-table ergoqual-ignore-r27" id="i01-nc">
+              <tr>
+                <th scope="col">Produit</th>
+                <th scope="col">Montant</th>
+              </tr>
+              <tr>
+                <td>Livret A</td>
+                <td>120 €</td>
+              </tr>
+            </table>
+          </div>
+          <p class="why ergoqual-ignore">Le titre invisible obligatoire manque.</p>
+        </div>
+        <details class="ergoqual-ignore">
+          <summary>Voir le HTML de cet exemple</summary>
+          <pre><code>&lt;table class=&quot;liste&quot;&gt;
+  &lt;tr&gt;
+    &lt;th scope=&quot;col&quot;&gt;Produit&lt;/th&gt;
+    &lt;th scope=&quot;col&quot;&gt;Montant&lt;/th&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;Livret A&lt;/td&gt;
+    &lt;td&gt;120 €&lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/table&gt;</code></pre>
+        </details>
+      </article>
+      <article class="case-card good">
+        <div class="card-head ergoqual-ignore">
+          <span class="state"><span aria-hidden="true">✓</span> Conforme</span>
+          <span class="expected">Attendu : aucun R40 ni R45</span>
+        </div>
+        <div class="card-body">
+          <h3 id="i01-c-title" class="ergoqual-ignore">Liste avec caption invisible</h3>
+          <div class="table-wrap">
+            <table class="liste demo-table ergoqual-ignore-r27" id="i01-c">
+              <caption class="invisible">Soldes des produits</caption>
+              <tr>
+                <th scope="col">Produit</th>
+                <th scope="col">Montant</th>
+              </tr>
+              <tr>
+                <td>Livret A</td>
+                <td>120 €</td>
+              </tr>
+            </table>
+          </div>
+          <p class="why ergoqual-ignore">Titre invisible descriptif.</p>
+        </div>
+        <details class="ergoqual-ignore">
+          <summary>Voir le HTML de cet exemple</summary>
+          <pre><code>&lt;table class=&quot;liste&quot;&gt;
+  &lt;caption class=&quot;invisible&quot;&gt;Soldes des produits&lt;/caption&gt;
+  &lt;tr&gt;
+    &lt;th scope=&quot;col&quot;&gt;Produit&lt;/th&gt;
+    &lt;th scope=&quot;col&quot;&gt;Montant&lt;/th&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;Livret A&lt;/td&gt;
+    &lt;td&gt;120 €&lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/table&gt;</code></pre>
+        </details>
+      </article>
+    </div>
+  </section>
+  <section class="bench-case" id="i02" data-case="i02">
+    <div class="case-intro ergoqual-ignore">
+      <p class="eyebrow">CAS I02 · R40.3 · CHARTE INTRANET</p>
+      <h2 id="i02-title">Fiche simple sans titre</h2>
+      <p>Même une fiche de trois lignes demande un titre invisible (retour QA Tester_Run_11-18).</p>
+    </div>
+    <div class="comparison">
+      <article class="case-card bad">
+        <div class="card-head ergoqual-ignore">
+          <span class="state"><span aria-hidden="true">!</span> Non conforme</span>
+          <span class="expected">Attendu : R40.3</span>
+        </div>
+        <div class="card-body">
+          <h3 id="i02-nc-title" class="ergoqual-ignore">Fiche sans caption</h3>
+          <div class="table-wrap">
+            <table class="fiche demo-table" id="i02-nc">
+              <tr>
+                <th scope="row">Source</th>
+                <td>Bâtiment du demandeur</td>
+              </tr>
+              <tr>
+                <th scope="row">Référentiel</th>
+                <td>BAT</td>
+              </tr>
+              <tr>
+                <th scope="row">Modifiée</th>
+                <td>Non</td>
+              </tr>
+            </table>
+          </div>
+          <p class="why ergoqual-ignore">La charte intranet s’applique aux tableaux simples comme complexes.</p>
+        </div>
+        <details class="ergoqual-ignore">
+          <summary>Voir le HTML de cet exemple</summary>
+          <pre><code>&lt;table class=&quot;fiche&quot;&gt;
+  &lt;tr&gt;
+    &lt;th scope=&quot;row&quot;&gt;Source&lt;/th&gt;
+    &lt;td&gt;Bâtiment du demandeur&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;th scope=&quot;row&quot;&gt;Référentiel&lt;/th&gt;
+    &lt;td&gt;BAT&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;th scope=&quot;row&quot;&gt;Modifiée&lt;/th&gt;
+    &lt;td&gt;Non&lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/table&gt;</code></pre>
+        </details>
+      </article>
+      <article class="case-card good">
+        <div class="card-head ergoqual-ignore">
+          <span class="state"><span aria-hidden="true">✓</span> Conforme</span>
+          <span class="expected">Attendu : aucun R40 ni R45</span>
+        </div>
+        <div class="card-body">
+          <h3 id="i02-c-title" class="ergoqual-ignore">Même fiche dans une infobulle fermée, avec titre</h3>
+        <p class="hidden-note ergoqual-ignore">Tableau présent mais masqué (display:none) : rien ne s’affiche ici. ErgoQual l’analyse quand même et précise « Erreur située dans un élément caché ».</p>
+          <div class="table-wrap">
+            <div class="masque">
+              <table class="fiche demo-table" id="i02-c">
+                <caption class="invisible">Origine de l’adresse</caption>
+                <tr>
+                  <th scope="row">Source</th>
+                  <td>Bâtiment du demandeur</td>
+                </tr>
+                <tr>
+                  <th scope="row">Référentiel</th>
+                  <td>BAT</td>
+                </tr>
+              </table>
+            </div>
+          </div>
+          <p class="why ergoqual-ignore">Le caption invisible d’un tableau caché est lu.</p>
+        </div>
+        <details class="ergoqual-ignore">
+          <summary>Voir le HTML de cet exemple</summary>
+          <pre><code>&lt;div class=&quot;masque&quot;&gt;
+  &lt;table class=&quot;fiche&quot;&gt;
+    &lt;caption class=&quot;invisible&quot;&gt;Origine de l’adresse&lt;/caption&gt;
+    &lt;tr&gt;
+      &lt;th scope=&quot;row&quot;&gt;Source&lt;/th&gt;
+      &lt;td&gt;Bâtiment du demandeur&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th scope=&quot;row&quot;&gt;Référentiel&lt;/th&gt;
+      &lt;td&gt;BAT&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/table&gt;
+&lt;/div&gt;</code></pre>
+        </details>
+      </article>
+    </div>
+  </section>
+  <section class="bench-case" id="i03" data-case="i03">
+    <div class="case-intro ergoqual-ignore">
+      <p class="eyebrow">CAS I03 · R40.3 · CHARTE INTRANET</p>
+      <h2 id="i03-title">Tableau à double entrée sans titre</h2>
+      <p>Un tableau ARIA de liste peut être nommé par aria-label.</p>
+    </div>
+    <div class="comparison">
+      <article class="case-card bad">
+        <div class="card-head ergoqual-ignore">
+          <span class="state"><span aria-hidden="true">!</span> Non conforme</span>
+          <span class="expected">Attendu : R40.3</span>
+        </div>
+        <div class="card-body">
+          <h3 id="i03-nc-title" class="ergoqual-ignore">tab2dim sans caption</h3>
+          <div class="table-wrap">
+            <table class="tab2dim demo-table" id="i03-nc">
+              <tr>
+                <td></td>
+                <th scope="col">Janvier</th>
+              </tr>
+              <tr>
+                <th scope="row">Livret A</th>
+                <td>120 €</td>
+              </tr>
+            </table>
+          </div>
+          <p class="why ergoqual-ignore">Titre invisible manquant.</p>
+        </div>
+        <details class="ergoqual-ignore">
+          <summary>Voir le HTML de cet exemple</summary>
+          <pre><code>&lt;table class=&quot;tab2dim&quot;&gt;
+  &lt;tr&gt;
+    &lt;td&gt;&lt;/td&gt;
+    &lt;th scope=&quot;col&quot;&gt;Janvier&lt;/th&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;th scope=&quot;row&quot;&gt;Livret A&lt;/th&gt;
+    &lt;td&gt;120 €&lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/table&gt;</code></pre>
+        </details>
+      </article>
+      <article class="case-card good">
+        <div class="card-head ergoqual-ignore">
+          <span class="state"><span aria-hidden="true">✓</span> Conforme</span>
+          <span class="expected">Attendu : aucun R40 ni R45</span>
+        </div>
+        <div class="card-body">
+          <h3 id="i03-c-title" class="ergoqual-ignore">Tableau ARIA de liste nommé par aria-label</h3>
+          <div class="table-wrap">
+            <div role="table" class="liste aria-table ergoqual-ignore-r27" aria-label="Soldes des produits" id="i03-c">
+              <div role="row">
+                <div role="columnheader">Produit</div>
+                <div role="columnheader">Montant</div>
+              </div>
+              <div role="row">
+                <div role="cell">Livret A</div>
+                <div role="cell">120 €</div>
+              </div>
+            </div>
+          </div>
+          <p class="why ergoqual-ignore">Pas de caption, mais un nom accessible : ni R40.2 ni R40.3.</p>
+        </div>
+        <details class="ergoqual-ignore">
+          <summary>Voir le HTML de cet exemple</summary>
+          <pre><code>&lt;div role=&quot;table&quot; class=&quot;liste&quot; aria-label=&quot;Soldes des produits&quot;&gt;
+  &lt;div role=&quot;row&quot;&gt;
+    &lt;div role=&quot;columnheader&quot;&gt;Produit&lt;/div&gt;
+    &lt;div role=&quot;columnheader&quot;&gt;Montant&lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div role=&quot;row&quot;&gt;
+    &lt;div role=&quot;cell&quot;&gt;Livret A&lt;/div&gt;
+    &lt;div role=&quot;cell&quot;&gt;120 €&lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+        </details>
+      </article>
+    </div>
+  </section>
+  <section class="bench-case" id="i04" data-case="i04">
+    <div class="case-intro ergoqual-ignore">
+      <p class="eyebrow">CAS I04 · R40.3 · CHARTE INTRANET</p>
+      <h2 id="i04-title">Caption vide</h2>
+      <p>Un caption vide est un titre manquant, pas une erreur de visibilité.</p>
+    </div>
+    <div class="comparison">
+      <article class="case-card bad">
+        <div class="card-head ergoqual-ignore">
+          <span class="state"><span aria-hidden="true">!</span> Non conforme</span>
+          <span class="expected">Attendu : R40.3</span>
+        </div>
+        <div class="card-body">
+          <h3 id="i04-nc-title" class="ergoqual-ignore">Liste avec &lt;caption&gt;&lt;/caption&gt;</h3>
+          <div class="table-wrap">
+            <table class="liste demo-table ergoqual-ignore-r27" id="i04-nc">
+              <caption></caption>
+              <tr>
+                <th scope="col">Produit</th>
+                <th scope="col">Montant</th>
+              </tr>
+              <tr>
+                <td>Livret A</td>
+                <td>120 €</td>
+              </tr>
+            </table>
+          </div>
+          <p class="why ergoqual-ignore">R40.3 (titre manquant), pas R40.2.</p>
+        </div>
+        <details class="ergoqual-ignore">
+          <summary>Voir le HTML de cet exemple</summary>
+          <pre><code>&lt;table class=&quot;liste&quot;&gt;
+  &lt;caption&gt;&lt;/caption&gt;
+  &lt;tr&gt;
+    &lt;th scope=&quot;col&quot;&gt;Produit&lt;/th&gt;
+    &lt;th scope=&quot;col&quot;&gt;Montant&lt;/th&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;Livret A&lt;/td&gt;
+    &lt;td&gt;120 €&lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/table&gt;</code></pre>
+        </details>
+      </article>
+      <article class="case-card good">
+        <div class="card-head ergoqual-ignore">
+          <span class="state"><span aria-hidden="true">✓</span> Conforme</span>
+          <span class="expected">Attendu : aucun R40 ni R45</span>
+        </div>
+        <div class="card-body">
+          <h3 id="i04-c-title" class="ergoqual-ignore">Liste à ruptures avec titre invisible</h3>
+          <div class="table-wrap">
+            <table class="liste demo-table ergoqual-ignore-r27" id="i04-c">
+              <caption class="invisible">Liste des opérations</caption>
+              <thead>
+                <tr>
+                  <th scope="col">Contrat</th>
+                  <th scope="col">Montant</th>
+                  <th scope="col">Actions</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th colspan="3" class="rupture">Rupture de niveau 1</th>
+                </tr>
+                <tr>
+                  <td>Tranche A</td>
+                  <td>34 000,00 EUR</td>
+                  <td><a href="#i04">Modifier la tranche A</a></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <p class="why ergoqual-ignore">Titre invisible ; les ruptures sont des titres de groupe.</p>
+        </div>
+        <details class="ergoqual-ignore">
+          <summary>Voir le HTML de cet exemple</summary>
+          <pre><code>&lt;table class=&quot;liste&quot;&gt;
+  &lt;caption class=&quot;invisible&quot;&gt;Liste des opérations&lt;/caption&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th scope=&quot;col&quot;&gt;Contrat&lt;/th&gt;
+      &lt;th scope=&quot;col&quot;&gt;Montant&lt;/th&gt;
+      &lt;th scope=&quot;col&quot;&gt;Actions&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;th colspan=&quot;3&quot; class=&quot;rupture&quot;&gt;Rupture de niveau 1&lt;/th&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Tranche A&lt;/td&gt;
+      &lt;td&gt;34 000,00 EUR&lt;/td&gt;
+      &lt;td&gt;&lt;a href=&quot;#i04&quot;&gt;Modifier la tranche A&lt;/a&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;</code></pre>
+        </details>
+      </article>
+    </div>
+  </section>
+  <section class="bench-case" id="i05" data-case="i05">
+    <div class="case-intro ergoqual-ignore">
+      <p class="eyebrow">CAS I05 · R40.2 · CHARTE INTRANET</p>
+      <h2 id="i05-title">Titre visible sur un tableau typé</h2>
+      <p>En intranet, le titre d’un tableau typé est invisible. Un tableau sans classe peut garder un titre visible.</p>
+    </div>
+    <div class="comparison">
+      <article class="case-card bad">
+        <div class="card-head ergoqual-ignore">
+          <span class="state"><span aria-hidden="true">!</span> Non conforme</span>
+          <span class="expected">Attendu : R40.2</span>
+        </div>
+        <div class="card-body">
+          <h3 id="i05-nc-title" class="ergoqual-ignore">Liste avec caption visible</h3>
+          <div class="table-wrap">
+            <table class="liste demo-table ergoqual-ignore-r27" id="i05-nc">
+              <caption>Soldes des produits</caption>
+              <tr>
+                <th scope="col">Produit</th>
+                <th scope="col">Montant</th>
+              </tr>
+              <tr>
+                <td>Livret A</td>
+                <td>120 €</td>
+              </tr>
+            </table>
+          </div>
+          <p class="why ergoqual-ignore">Titre visible interdit sur un tableau typé en intranet.</p>
+        </div>
+        <details class="ergoqual-ignore">
+          <summary>Voir le HTML de cet exemple</summary>
+          <pre><code>&lt;table class=&quot;liste&quot;&gt;
+  &lt;caption&gt;Soldes des produits&lt;/caption&gt;
+  &lt;tr&gt;
+    &lt;th scope=&quot;col&quot;&gt;Produit&lt;/th&gt;
+    &lt;th scope=&quot;col&quot;&gt;Montant&lt;/th&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;Livret A&lt;/td&gt;
+    &lt;td&gt;120 €&lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/table&gt;</code></pre>
+        </details>
+      </article>
+      <article class="case-card good">
+        <div class="card-head ergoqual-ignore">
+          <span class="state"><span aria-hidden="true">✓</span> Conforme</span>
+          <span class="expected">Attendu : aucun R40 ni R45</span>
+        </div>
+        <div class="card-body">
+          <h3 id="i05-c-title" class="ergoqual-ignore">Tableau sans classe, caption visible</h3>
+          <div class="table-wrap">
+            <table class="demo-table" id="i05-c">
+              <caption>Soldes des produits</caption>
+              <tr>
+                <th scope="col">Produit</th>
+                <th scope="col">Montant</th>
+              </tr>
+              <tr>
+                <td>Livret A</td>
+                <td>120 €</td>
+              </tr>
+            </table>
+          </div>
+          <p class="why ergoqual-ignore">R40.2 ne concerne que les tableaux typés.</p>
+        </div>
+        <details class="ergoqual-ignore">
+          <summary>Voir le HTML de cet exemple</summary>
+          <pre><code>&lt;table&gt;
+  &lt;caption&gt;Soldes des produits&lt;/caption&gt;
+  &lt;tr&gt;
+    &lt;th scope=&quot;col&quot;&gt;Produit&lt;/th&gt;
+    &lt;th scope=&quot;col&quot;&gt;Montant&lt;/th&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;Livret A&lt;/td&gt;
+    &lt;td&gt;120 €&lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/table&gt;</code></pre>
+        </details>
+      </article>
+    </div>
+  </section>
+  <section class="bench-case" id="i06" data-case="i06">
+    <div class="case-intro ergoqual-ignore">
+      <p class="eyebrow">CAS I06 · R40.4 · CHARTE MAQUETTEUR</p>
+      <h2 id="i06-title">Titre invisible resté à « Objet »</h2>
+      <p>La valeur par défaut du Maquetteur est aussi signalée en intranet.</p>
+    </div>
+    <div class="comparison">
+      <article class="case-card bad">
+        <div class="card-head ergoqual-ignore">
+          <span class="state"><span aria-hidden="true">!</span> Non conforme</span>
+          <span class="expected">Attendu : R40.4</span>
+        </div>
+        <div class="card-body">
+          <h3 id="i06-nc-title" class="ergoqual-ignore">Liste, caption invisible « Objet »</h3>
+          <div class="table-wrap">
+            <table class="liste demo-table ergoqual-ignore-r27" id="i06-nc">
+              <caption class="invisible">Objet</caption>
+              <tr>
+                <th scope="col">Produit</th>
+                <th scope="col">Montant</th>
+              </tr>
+              <tr>
+                <td>Livret A</td>
+                <td>120 €</td>
+              </tr>
+            </table>
+          </div>
+          <p class="why ergoqual-ignore">Le titre invisible n’a pas été renseigné.</p>
+        </div>
+        <details class="ergoqual-ignore">
+          <summary>Voir le HTML de cet exemple</summary>
+          <pre><code>&lt;table class=&quot;liste&quot;&gt;
+  &lt;caption class=&quot;invisible&quot;&gt;Objet&lt;/caption&gt;
+  &lt;tr&gt;
+    &lt;th scope=&quot;col&quot;&gt;Produit&lt;/th&gt;
+    &lt;th scope=&quot;col&quot;&gt;Montant&lt;/th&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;Livret A&lt;/td&gt;
+    &lt;td&gt;120 €&lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/table&gt;</code></pre>
+        </details>
+      </article>
+      <article class="case-card good">
+        <div class="card-head ergoqual-ignore">
+          <span class="state"><span aria-hidden="true">✓</span> Conforme</span>
+          <span class="expected">Attendu : aucun R40 ni R45</span>
+        </div>
+        <div class="card-body">
+          <h3 id="i06-c-title" class="ergoqual-ignore">Tableau « Droits » (retour QA)</h3>
+          <div class="table-wrap">
+            <table class="liste demo-table ergoqual-ignore-r27" id="i06-c">
+              <caption class="invisible"><span class="invisible">Droits à congés</span></caption>
+              <thead>
+                <tr aria-hidden="true">
+                  <th scope="col" rowspan="2"></th>
+                  <th scope="col" colspan="2">Congés payés (jours)</th>
+                </tr>
+                <tr aria-hidden="true">
+                  <th scope="col">Acquis</th>
+                  <th scope="col">En cours</th>
+                </tr>
+                <tr class="ei_sronly">
+                  <td></td>
+                  <th scope="col">Congés payés acquis</th>
+                  <th scope="col">Congés payés en cours d’acquisition</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Solde</td>
+                  <td>0,00</td>
+                  <td>2,50</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <p class="why ergoqual-ignore">Titre invisible descriptif, en-têtes visuels en aria-hidden et ligne d’en-têtes lue.</p>
+        </div>
+        <details class="ergoqual-ignore">
+          <summary>Voir le HTML de cet exemple</summary>
+          <pre><code>&lt;table class=&quot;liste&quot;&gt;
+  &lt;caption class=&quot;invisible&quot;&gt;&lt;span class=&quot;invisible&quot;&gt;Droits à congés&lt;/span&gt;&lt;/caption&gt;
+  &lt;thead&gt;
+    &lt;tr aria-hidden=&quot;true&quot;&gt;
+      &lt;th scope=&quot;col&quot; rowspan=&quot;2&quot;&gt;&lt;/th&gt;
+      &lt;th scope=&quot;col&quot; colspan=&quot;2&quot;&gt;Congés payés (jours)&lt;/th&gt;
+    &lt;/tr&gt;
+    &lt;tr aria-hidden=&quot;true&quot;&gt;
+      &lt;th scope=&quot;col&quot;&gt;Acquis&lt;/th&gt;
+      &lt;th scope=&quot;col&quot;&gt;En cours&lt;/th&gt;
+    &lt;/tr&gt;
+    &lt;tr class=&quot;ei_sronly&quot;&gt;
+      &lt;td&gt;&lt;/td&gt;
+      &lt;th scope=&quot;col&quot;&gt;Congés payés acquis&lt;/th&gt;
+      &lt;th scope=&quot;col&quot;&gt;Congés payés en cours d’acquisition&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Solde&lt;/td&gt;
+      &lt;td&gt;0,00&lt;/td&gt;
+      &lt;td&gt;2,50&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;</code></pre>
+        </details>
+      </article>
+    </div>
+  </section>
+  <section class="bench-case" id="i07" data-case="i07">
+    <div class="case-intro ergoqual-ignore">
+      <p class="eyebrow">CAS I07 · R40 · CHARTE</p>
+      <h2 id="i07-title">Tableau sans classe et sans titre</h2>
+      <p>Hors tableau typé, l’erreur reste R40 (titre), pas R40.3.</p>
+    </div>
+    <div class="comparison">
+      <article class="case-card bad">
+        <div class="card-head ergoqual-ignore">
+          <span class="state"><span aria-hidden="true">!</span> Non conforme</span>
+          <span class="expected">Attendu : R40</span>
+        </div>
+        <div class="card-body">
+          <h3 id="i07-nc-title" class="ergoqual-ignore">Tableau sans classe ni caption</h3>
+          <div class="table-wrap">
+            <table class="demo-table" id="i07-nc">
+              <tr>
+                <th scope="col">Produit</th>
+                <th scope="col">Montant</th>
+              </tr>
+              <tr>
+                <td>Livret A</td>
+                <td>120 €</td>
+              </tr>
+            </table>
+          </div>
+          <p class="why ergoqual-ignore">R40.3 est réservé aux tableaux typés.</p>
+        </div>
+        <details class="ergoqual-ignore">
+          <summary>Voir le HTML de cet exemple</summary>
+          <pre><code>&lt;table&gt;
+  &lt;tr&gt;
+    &lt;th scope=&quot;col&quot;&gt;Produit&lt;/th&gt;
+    &lt;th scope=&quot;col&quot;&gt;Montant&lt;/th&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;Livret A&lt;/td&gt;
+    &lt;td&gt;120 €&lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/table&gt;</code></pre>
+        </details>
+      </article>
+      <article class="case-card good">
+        <div class="card-head ergoqual-ignore">
+          <span class="state"><span aria-hidden="true">✓</span> Conforme</span>
+          <span class="expected">Attendu : aucun R40 ni R45</span>
+        </div>
+        <div class="card-body">
+          <h3 id="i07-c-title" class="ergoqual-ignore">Fiche avec caption invisible</h3>
+          <div class="table-wrap">
+            <table class="fiche demo-table" id="i07-c">
+              <caption class="invisible">Soldes des produits</caption>
+              <tr>
+                <th scope="row">Livret A</th>
+                <td>120 €</td>
+              </tr>
+            </table>
+          </div>
+          <p class="why ergoqual-ignore">Tableau typé avec titre invisible descriptif.</p>
+        </div>
+        <details class="ergoqual-ignore">
+          <summary>Voir le HTML de cet exemple</summary>
+          <pre><code>&lt;table class=&quot;fiche&quot;&gt;
+  &lt;caption class=&quot;invisible&quot;&gt;Soldes des produits&lt;/caption&gt;
+  &lt;tr&gt;
+    &lt;th scope=&quot;row&quot;&gt;Livret A&lt;/th&gt;
+    &lt;td&gt;120 €&lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/table&gt;</code></pre>
+        </details>
+      </article>
+    </div>
+  </section>
+</main>
+</body>
+</html>
